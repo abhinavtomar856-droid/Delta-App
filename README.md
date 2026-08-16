@@ -18,7 +18,6 @@ A simple User Management Web Application built using Node.js, Express.js, EJS, a
 - Node.js
 - Express.js
 - EJS
-- MySQL
 - MySQL2
 - Method-Override
 - Faker.js
