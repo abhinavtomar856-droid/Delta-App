@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All users of Delta App</title>
+</head>
+<style>
+    table,
+    tr,
+    th,
+    td {
+        border: 2px solid black;
+    }
+</style>
+
+<body>
+    <h1>Data of all users in Delta App</h1>
+    <table>
+        <tr>
+            <th>id</th>
+            <th>username</th>
+            <th>email</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+        <%for(user of users){ %>
+            <tr>
+                <td><%=user.id%></td>
+                <td><%=user.username%></td>
+                <td><%=user.email%></td>
+                <td>
+                    <form method="GET" action="/user/<%=user.id%>/edit">
+                        <button>Edit username</button>
+                    </form>
+                </td>
+                <td>
+                    <form method="POST" action="/user/delete?_method=DELETE">
+                        <button>Delete</button>
+                    </form>
+                </td>
+            </tr>
+            <%} %>
+    </table>
+</body>
+
+</html>
